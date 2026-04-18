@@ -33,3 +33,24 @@ export class UserDto {
     @IsString()
     updatedAt!: Date;
 };
+
+export class UserResponseDto {
+    @IsString()
+    @IsUUID()
+    id!: string;
+
+    @IsEmail()
+    email!: string;
+
+    @IsOptional()
+    @IsString()
+    name?: string | null;
+};
+
+export class LoginDto {
+    @IsEmail()
+    email!: string;
+
+    @IsString()
+    password!: string;
+};
